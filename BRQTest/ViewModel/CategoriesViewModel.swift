@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxSwift
+
 class CategoriesViewModel {
     var apiManager: DevAPIManager?
     var view: CategoriesViewController?

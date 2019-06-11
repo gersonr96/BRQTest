@@ -7,16 +7,18 @@
 //
 
 import UIKit
-
+import  NVActivityIndicatorView
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var activityCat: NVActivityIndicatorView!
     var ViewModel: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibFiles()
         fetchData()
+        activityCat.startAnimating()
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +26,7 @@ class CategoriesViewController: UIViewController {
     func fetchData(){
         CategoriesViewModel.init().fetchCategories { (categories) in
             self.ViewModel = categories!
+            self.activityCat.stopAnimating()
             self.tableview.reloadData()
         }
     }

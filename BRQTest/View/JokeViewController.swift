@@ -8,19 +8,27 @@
 
 import UIKit
 import ImageLoader
+import NVActivityIndicatorView
 class JokeViewController: UIViewController {
 
     @IBOutlet weak var jokeTitle: UILabel!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var jokeText: UITextView!
+    @IBOutlet weak var activityIndicatorJoke: NVActivityIndicatorView!
+    
+    
     var category: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         fechJoke()
+        activityIndicatorJoke.startAnimating()
+        
+        
        
     }
     func fechJoke(){
         JokeViewModel.init().fetchCategories(category: category!) { (joke) in
+            self.activityIndicatorJoke.stopAnimating()
             self.displayJoke(joke: joke!)
         }
     }
