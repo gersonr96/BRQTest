@@ -2,7 +2,7 @@
 //  NetworkingAPIManage.swift
 //  BRQTest
 //
-//  Created by Gersinho on 10/06/19.
+//  Created by Gerson Vieira on 10/06/19.
 //  Copyright © 2019 Gerson. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import RxSwift
 
 class DevAPIManager
 {
-    let provider =  MoyaProvider<DevAPI>(/*plugins: [NetworkLoggerPlugin(verbose: false)]*/)
+    let provider =  MoyaProvider<DevAPI>(plugins: [NetworkLoggerPlugin(verbose: false)])
     typealias responseHandler = (_ category: [String]?
         , _ error: String?) -> Void
     func requestMovieDetail(_ completionHandler: @escaping (responseHandler))

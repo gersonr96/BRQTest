@@ -2,7 +2,7 @@
 //  FeedBack.swift
 //  BRQTest
 //
-//  Created by Gersinho on 11/06/19.
+//  Created by Gerson Vieira on 11/06/19.
 //  Copyright © 2019 Gerson. All rights reserved.
 //
 
@@ -17,4 +17,5 @@ class FeedBack{
         })
         return alert
     }
+  
 }
