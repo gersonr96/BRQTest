@@ -1,0 +1,6 @@
+framework module Pods_BRQTestTests {
+  umbrella header "Pods-BRQTestTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
