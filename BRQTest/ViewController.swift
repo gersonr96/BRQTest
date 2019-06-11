@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        DevPeopleAPIManager.shared.requestMovies { (categories, error) in
+//            print("CHAMOU")
+//        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 

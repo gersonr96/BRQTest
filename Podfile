@@ -6,6 +6,10 @@ target 'BRQTest' do
   use_frameworks!
   # Pods for BRQTest
 	pod 'Moya'
+	pod ‘RxSwift’
+        pod ‘Moya/RxSwift’
+        pod ‘RxCocoa’
+        pod 'ImageLoader'
   target 'BRQTestTests' do
     inherit! :search_paths
     # Pods for testing
