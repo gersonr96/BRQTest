@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Categories View Controller-->
+        <!--Genres-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CategoriesViewController" customModule="BRQTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Djr-Pm-edh"/>
+                    <navigationItem key="navigationItem" title="Genres" id="Djr-Pm-edh"/>
                     <connections>
                         <outlet property="tableview" destination="j6B-Dc-18r" id="v0w-r0-sWl"/>
                     </connections>
@@ -54,20 +54,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-EC-sgo">
-                                <rect key="frame" x="50" y="67" width="275" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IUM-pO-KQ4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IUM-pO-KQ4">
                                 <rect key="frame" x="50" y="232" width="275" height="202"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="JLH-pl-63a"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-EC-sgo">
+                                <rect key="frame" x="122" y="75" width="131" height="131"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FZL-EC-sgo" secondAttribute="height" multiplier="1:1" id="9b2-i8-we4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IUM-pO-KQ4" firstAttribute="top" secondItem="FZL-EC-sgo" secondAttribute="bottom" constant="26" id="BbD-vg-y4w"/>
+                            <constraint firstItem="mwt-xa-qYh" firstAttribute="trailing" secondItem="FZL-EC-sgo" secondAttribute="trailing" constant="122" id="JIP-QO-uRr"/>
+                            <constraint firstItem="FZL-EC-sgo" firstAttribute="top" secondItem="mwt-xa-qYh" secondAttribute="top" constant="55" id="JYT-sw-SC8"/>
+                            <constraint firstItem="IUM-pO-KQ4" firstAttribute="leading" secondItem="mwt-xa-qYh" secondAttribute="leading" constant="50" id="XYP-EO-MfF"/>
+                            <constraint firstItem="mwt-xa-qYh" firstAttribute="trailing" secondItem="IUM-pO-KQ4" secondAttribute="trailing" constant="50" id="e1N-ua-eHb"/>
+                            <constraint firstItem="FZL-EC-sgo" firstAttribute="leading" secondItem="mwt-xa-qYh" secondAttribute="leading" constant="122" id="uhT-5l-0SG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mwt-xa-qYh"/>
                     </view>
                     <connections>

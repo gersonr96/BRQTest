@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import ImageLoader
 class JokeViewController: UIViewController {
 
     @IBOutlet weak var icon: UIImageView!
@@ -24,6 +24,7 @@ class JokeViewController: UIViewController {
         }
     }
     func displayJoke(joke: Joke){
+        icon.load.request(with: joke.icon_url!)
         jokeText.text = joke.value
     }
     
