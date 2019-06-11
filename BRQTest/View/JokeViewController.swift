@@ -10,6 +10,7 @@ import UIKit
 import ImageLoader
 class JokeViewController: UIViewController {
 
+    @IBOutlet weak var jokeTitle: UILabel!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var jokeText: UITextView!
     var category: String?
@@ -24,6 +25,8 @@ class JokeViewController: UIViewController {
         }
     }
     func displayJoke(joke: Joke){
+         let genres = joke.categories!.joined(separator: ",")
+        jokeTitle.text = genres.uppercased()
         icon.load.request(with: joke.icon_url!)
         jokeText.text = joke.value
     }
