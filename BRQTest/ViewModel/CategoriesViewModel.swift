@@ -7,41 +7,44 @@
 //
 
 import UIKit
-import ImageLoad
-struct CategoryViewModel{
-    let joke: Joke
-    private (set) var jokeTitle: String
-    private (set) var icon: UIImage
-    private (set) var jokeText: String
+protocol CategoriesBussinesLogic {
+    func fetchCategories(category: String)
+}
+struct CategoriesViewModel{
+    let Categories: String
+    private (set) var category: String
+ 
     
-    init(currentJoke: Joke) {
-        self.joke = joke
+    init(currentCategory: String) {
+        self.Categories = Categories
         loadJoke()
     }
     
-    private mutating func loadJoke(){
-        jokeTitle = setTitle(currentJoke: joke)
-        icon.load.request(with: joke.icon_url!)
-        jokeText = joke.value
-    }
+//    private mutating func loadJoke(){
+//        jokeTitle = setTitle(currentJoke: joke)
+//        icon.load.request(with: joke.icon_url!)
+//        jokeText = joke.value!
+//    }
     
-    private func setTitle(currentJoke: Joke)-> String{
-         let genres = joke.categories!.joined(separator: ",")
-        return genres
-    }
 }
-class CategoriesViewModel {
+
+class CategoriesManagerViewModel {
     var apiManager: DevAPIManager?
-    var view: CategoriesViewController?
-    func fetchCategories(completion: @escaping ([String]?)->Void){
+    var viewController: CategoriesDisplayLogic?
+    private func fetchCategories(completion: @escaping ([String]?)->Void){
         apiManager = DevAPIManager()
         apiManager?.requestMovieDetail( { (categories, error) in
             guard let category = categories else{
-                self.view?.present(FeedBack.init().feedbackError(error: error!), animated: true, completion: nil)
+                self.viewController?.displayError(error: error)
                 return
             }
             completion(category)
         })
-   
     }
+    
+  
+    
+    
 }
+
+

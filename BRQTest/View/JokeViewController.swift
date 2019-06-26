@@ -9,13 +9,17 @@
 import UIKit
 import ImageLoader
 import NVActivityIndicatorView
-class JokeViewController: UIViewController {
+protocol JokeDisplayLogic {
+    func displayJoke(viewModel: JokeViewModel)
+    func displayError(error: String)
+}
+class JokeViewController: UIViewController, JokeDisplayLogic {
 
     @IBOutlet weak var jokeTitle: UILabel!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var jokeText: UITextView!
     @IBOutlet weak var activityIndicatorJoke: NVActivityIndicatorView!
-    
+    var viewModelRequest: JokeBussinesLogic?
     
     var category: String?
     override func viewDidLoad() {
@@ -23,20 +27,22 @@ class JokeViewController: UIViewController {
         fechJoke()
         activityIndicatorJoke.startAnimating()
         
-        
-       
     }
+    
+    func displayError(error: String) {
+        FeedBack.init().feedbackError(error: error!)
+    }
+    func displayJoke(viewModel: JokeViewModel) {
+        self.displayJoke(joke: viewModel)
+    }
+    
     func fechJoke(){
-        JokeViewModel.init().fetchCategories(category: category!) { (joke) in
-            self.activityIndicatorJoke.stopAnimating()
-            self.displayJoke(joke: joke!)
-        }
+        viewModelRequest?.fetchCategories(category: category!)
     }
-    func displayJoke(joke: Joke){
-         let genres = joke.categories!.joined(separator: ",")
-        jokeTitle.text = genres.uppercased()
-        icon.load.request(with: joke.icon_url!)
-        jokeText.text = joke.value
+    func displayJoke(joke: JokeViewModel){
+        jokeTitle.text = joke.jokeTitle
+        icon.image = joke.icon
+        jokeText.text = joke.jokeText
     }
     
 }

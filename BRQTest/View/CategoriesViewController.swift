@@ -8,6 +8,10 @@
 
 import UIKit
 import  NVActivityIndicatorView
+protocol CategoriesDisplayLogic {
+    func displayCategories(viewModel: JokeViewModel)
+    func displayError(error: String)
+}
 class CategoriesViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
@@ -22,7 +26,11 @@ class CategoriesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-  
+    
+    func displayError(error: String) {
+        FeedBack.init().feedbackError(error: error!)
+    }
+    
     func fetchData(){
         CategoriesViewModel.init().fetchCategories { (categories) in
             self.ViewModel = categories!
