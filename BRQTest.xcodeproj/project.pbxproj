@@ -16,7 +16,6 @@
 		E079D4F522AF30D60010BCA7 /* BRQTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E079D4F422AF30D60010BCA7 /* BRQTestTests.swift */; };
 		E09070F122AF32FF00AF608B /* DevAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09070F022AF32FF00AF608B /* DevAPI.swift */; };
 		E09070F422AF33CA00AF608B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09070F322AF33CA00AF608B /* Constants.swift */; };
-		E09070F722AF381200AF608B /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09070F622AF381200AF608B /* Categories.swift */; };
 		E09070F922AF38CC00AF608B /* DevAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09070F822AF38CC00AF608B /* DevAPIManager.swift */; };
 		E09070FE22AF44E600AF608B /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E09070FD22AF44E600AF608B /* ListCell.xib */; };
 		E090710022AF460200AF608B /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09070FF22AF460200AF608B /* ListTableViewCell.swift */; };
@@ -56,7 +55,6 @@
 		E079D4F622AF30D60010BCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E09070F022AF32FF00AF608B /* DevAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevAPI.swift; sourceTree = "<group>"; };
 		E09070F322AF33CA00AF608B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E09070F622AF381200AF608B /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		E09070F822AF38CC00AF608B /* DevAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevAPIManager.swift; sourceTree = "<group>"; };
 		E09070FD22AF44E600AF608B /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
 		E09070FF22AF460200AF608B /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 		E09070F522AF37F900AF608B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E09070F622AF381200AF608B /* Categories.swift */,
 				E090710922AF667200AF608B /* Joke.swift */,
 			);
 			path = Model;
@@ -331,15 +328,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BRQTest-checkManifestLockResult.txt",
 			);
@@ -353,15 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BRQTestTests-checkManifestLockResult.txt",
 			);
@@ -375,8 +364,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BRQTest/Pods-BRQTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -386,8 +373,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageLoader.framework",
@@ -411,7 +396,6 @@
 				E090710022AF460200AF608B /* ListTableViewCell.swift in Sources */,
 				E090710E22AF74BF00AF608B /* JokeViewModel.swift in Sources */,
 				E09070F122AF32FF00AF608B /* DevAPI.swift in Sources */,
-				E09070F722AF381200AF608B /* Categories.swift in Sources */,
 				E090710822AF622D00AF608B /* FeedBack.swift in Sources */,
 				E09070F922AF38CC00AF608B /* DevAPIManager.swift in Sources */,
 				E079D4E022AF30D30010BCA7 /* AppDelegate.swift in Sources */,
