@@ -34,6 +34,7 @@ class JokeManageViewModel: JokeBussinesLogic{
     var apiManager: DevAPIManager?
     weak var viewController: JokeDisplayLogic?
     private(set) var jokeData: JokeViewModel?
+    
     func fetchCategories(category: String) {
         apiManager = DevAPIManager()
         apiManager?.requestJoke(category: category, { [weak self](joke, error) in

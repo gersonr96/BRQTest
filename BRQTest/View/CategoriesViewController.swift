@@ -9,7 +9,7 @@
 import UIKit
 import  NVActivityIndicatorView
 protocol CategoriesDisplayLogic {
-    func displayCategories(viewModel: JokeViewModel)
+    func displayCategories(viewModel: [String])
     func displayError(error: String)
 }
 class CategoriesViewController: UIViewController {
@@ -17,6 +17,7 @@ class CategoriesViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityCat: NVActivityIndicatorView!
     var ViewModel: [String] = []
+    var viewModelRequest: CategoriesBussinesLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +33,10 @@ class CategoriesViewController: UIViewController {
     }
     
     func fetchData(){
-        CategoriesViewModel.init().fetchCategories { (categories) in
-            self.ViewModel = categories!
-            self.activityCat.stopAnimating()
-            self.tableview.reloadData()
-        }
+       viewModelRequest?.fetchCategories()
+    }
+    func displayCategories(viewModel: [String]){
+        viewModel = viewModel
     }
 
      // MARK: View lifecycle
